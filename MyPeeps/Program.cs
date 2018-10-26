@@ -99,6 +99,7 @@ namespace MyPeeps
         }
 
 
+        //method to add a person
 
         static Person NewPerson(List<TeamMember> MemberList)
         {
@@ -150,7 +151,8 @@ namespace MyPeeps
                         {
                         salary = GetNumber("Please eneter the yearly salary (0 - 1000000):", 0, 1000000);
                         address = GetString("Please enter an address in Title Case, space, and then a 2-3 letter abbreviation followed by '.'\n" +
-                                            "EX: '123 Stonehoof Dr.'   or    '2134 Moon Ave.'\n", @"^[0-9]+(\s[A-Z][a-z]+)+\s[A-Z][a-z]{1,3}[.]$");
+                                            "EX: '123 Stonehoof Dr.'   or    '2134 Moon Ave.'\n", @"^[0-9]+(\s[A-Z][a-z]+)+\s[A-Z][a-z]{1,2}[.]$");
+
                         TeamMember NewDude = new TeamMember(firstName, lastName, age, email, salary, address);
                         MemberList.Add(NewDude);
                         return NewDude;
