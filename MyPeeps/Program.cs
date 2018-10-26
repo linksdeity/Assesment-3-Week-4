@@ -76,7 +76,7 @@ namespace MyPeeps
 
                 if (answer == 'y' || answer == 'Y')
                 {
-                        PersonList.Add(NewPerson(MemberList));
+                    PersonList.Add(NewPerson(MemberList));
 
                     if (PersonList.Contains(null))
                     {
@@ -135,9 +135,9 @@ namespace MyPeeps
 
                 lastName = GetString("Please enter a last name in Title Case:", @"^[A-Z][a-z]+$");
 
-                email = GetString("please enter a valid email address:", @"^[A-Za-z0-9]+[@][A-Za-z0-9]+[.][a-z]{3}$");
+                email = GetString("please enter a valid email address:", @"^[A-Za-z0-9]+[@][A-Za-z0-9]+[.][a-z]{2,3}$");
 
-                age = GetNumber("Please enter a valid age (0 - 122):", 0, 122);
+                age = GetNumber("Please enter a valid age...\n( 0 (super baby)  to  122 (record for oldest human) )", 0, 122);
 
                     if (age > 18)
                     {
@@ -149,7 +149,7 @@ namespace MyPeeps
                         else
                         {
                         salary = GetNumber("Please eneter the yearly salary (0 - 1000000):", 0, 1000000);
-                        address = GetString("Please eneter an address in Title Case, space, and then a 2-3 letter abbreviation followed by '.'\n" +
+                        address = GetString("Please enter an address in Title Case, space, and then a 2-3 letter abbreviation followed by '.'\n" +
                                             "EX: '123 Stonehoof Dr.'   or    '2134 Moon Ave.'\n", @"^[0-9]+(\s[A-Z][a-z]+)+\s[A-Z][a-z]{1,3}[.]$");
                         TeamMember NewDude = new TeamMember(firstName, lastName, age, email, salary, address);
                         MemberList.Add(NewDude);
